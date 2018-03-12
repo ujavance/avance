@@ -1,0 +1,186 @@
+<div class="row clearfix searchPage">
+  <div class="col-md-6 col-md-offset-2" style=" border-right: 1px solid #ddd; ">
+    <form [formGroup]="formModel" novalidate name="searchForm" role="form">
+
+      <div class="form-inline">
+
+        <!-- 职业搜索 -->
+        <div class="form-group">
+          <label class="sr-only" for=" ">职业搜索</label>
+          <div class="input-group">
+            <div class="input-group-addon">职业</div>
+            <input formControlName="position" type="text" class="form-control" id="" placeholder="请输入搜索职位">
+          </div>
+        </div>
+        <!-- /职业搜索 -->
+        <!-- 发布单位 -->
+        <div class="form-group">
+          <label class="sr-only" for=" ">发布单位</label>
+          <div class="input-group">
+            <div class="input-group-addon">公司</div>
+            <input formControlName="comp" type="text" class="form-control" id="" placeholder="请输入发布单位">
+          </div>
+        </div>
+        <!-- /发布单位 -->
+
+        <!-- 工作地点 -->
+
+        <div class="form-group">
+          <label class="sr-only" for=" ">工作地点</label>
+          <div class="input-group">
+            <div class="input-group-addon">地点</div>
+            <input formControlName="place" type="text" class="form-control" id="" placeholder="请输入地点">
+          </div>
+        </div>
+        <!-- /工作地点 -->
+
+        <!-- 学历水平 -->
+        <!-- <div class="input-group">
+          <div class="input-group-addon" for="we11">学历</div>
+          <select formControlName="edu" class="form-control" id="we11" type="text">
+            <option *ngFor="let iEdu of edus" [value]="iEdu">{{iEdu}}</option>
+          </select>
+        </div> -->
+        <!-- /学历水平 -->
+        <button type="button" (click)="onSubmit()" [disabled]="!formModel.valid" class="btn btn-primary">搜索</button>
+      </div>
+      <!-- 掌握技能 -->
+      <hr>
+      <div class="form-group">
+        <span class="label label-info">语言</span>
+        <span>
+          <!--  -->
+          <span *ngFor="let iSkill of sillsInfor, let i=index" (click)="clickItem(iSkill.skillInfor);iSkill.hidden = !iSkill.hidden"
+            [class.label-lighter-c]="(iSkill.hidden)" class="label label-lighter">
+            {{iSkill.skillInfor}}
+            <!--[formGroupName]="i"   formArrayName="skills" <label class="checkbox-inline"> -->
+            <!-- <span class="glyphicon glyphicon-ok" *ngIf="iSkill.hidden"></span> -->
+            <!-- <input formControlName="skillInfor" [class.hidden]="false" type="checkbox" value={{iSkill.skillInfor}}> -->
+            <!-- </label> -->
+          </span>
+        </span>
+      </div>
+      <hr>
+      <!-- /掌握技能 -->
+      <!-- 工资 -->
+      <div class="form-group">
+        <span class="label label-info">工资</span>
+        <span>
+          <span *ngFor="let iSalary of salarys; let i=index" (click)="cSalary=i" [class.label-lighter-c]="(cSalary==i)" class="label label-lighter">
+            <label class="checkbox-inline">
+              <!-- <span class="glyphicon glyphicon-ok" *ngIf="cSalary== i"></span> -->
+              <input formControlName="salary" [class.hidden]="true" type="radio" value={{iSalary}}>{{iSalary}}
+            </label>
+
+          </span>
+        </span>
+      </div>
+      <hr>
+      <!-- /工资 -->
+      <!-- 工作经验 -->
+      <div class="form-group">
+        <span class="label label-info">经验</span>
+        <span>
+          <span *ngFor="let iWTime of workTime; let i=index" (click)="cWork=i" [class.label-lighter-c]="(cWork==i)" class="label label-lighter">
+            <label class="checkbox-inline">
+              <!-- <span class="glyphicon glyphicon-ok" *ngIf="cWork== i"></span> -->
+              <input formControlName="exper" class="" [class.hidden]="true" type="radio" value={{iWTime}}>{{iWTime}}
+            </label>
+          </span>
+        </span>
+      </div>
+      <hr>
+      <!-- /工作经验 -->
+      <!-- 发布时间 -->
+      <div class="form-group">
+        <span class="label label-info">发布</span>
+        <span>
+          <span *ngFor="let iTime of releseTime; let i=index" (click)="cTime=i" [class.label-lighter-c]="(cTime==i)" class="label label-lighter">
+            <label class="checkbox-inline">
+              <!-- <span class="glyphicon glyphicon-ok" *ngIf="cTime== i"></span> -->
+              <input formControlName="time" class="" [class.hidden]="true" type="radio" value={{iTime}}>{{iTime}}
+            </label>
+          </span>
+        </span>
+      </div>
+      <hr>
+      <!-- /发布时间 -->
+      <!-- 热搜 -->
+      <!-- <div class="form-group">
+        <span class="label label-danger">热搜</span>
+        <span>
+          <span *ngFor="let iHot of collection; let i=index" (click)="cHot=i" [class.label-lighter-c]="(cHot==i)" class="label label-lighter">
+            <label class="checkbox-inline">
+              <span class="glyphicon glyphicon-fire" style="color: red" *ngIf="iHot.hot"></span>
+              <span class="badge badge-danger" *ngIf="iHot.new" >新</span>
+              <input formControlName="hots" class="" [class.hidden]="true" type="radio" value={{iHot.content}}>{{iHot.content}}
+            </label>
+          </span>
+        </span>
+      </div>
+      <hr> -->
+      <!-- /热搜 -->
+    </form>
+    <!-- /表单 -->
+  </div>
+  <div class="col-md-2"> 
+      <a href="#" class="list-group-item active">
+        热搜推荐
+      </a>
+      <a class="list-group-item" *ngFor="let item of collection,let i = index">
+        <span class="glyphicon glyphicon-fire" style="color: red" *ngIf="i<3"></span>
+        <span class="text-danger" *ngIf="i>=3 ">{{item?.index}}</span>
+        {{item?.content}}
+        <span class="label label-warning" *ngIf="item?.new">新</span>
+        <span class="label label-danger" *ngIf="item?.hot">热</span>
+      </a> 
+  </div>
+</div>
+<div class="row clearfix searchPage">
+  <div class="col-md-8 col-md-offset-2">
+    <!-- 搜索结果 -->
+    <div *ngIf="searchResult">
+      <!-- <div class="panel-heading">
+            <h3 class="panel-title">匹配如下
+              <span class="badge"></span>
+            </h3>
+          </div> -->
+      <!--标题说明 start-->
+      <div class="page-header">
+        <h3>
+          <i class="fa fa-spin fa-connectdevelop fa-rotate-10"></i>
+          匹配如下
+          <small>共{{infors?.length}}条结果</small>
+        </h3>
+      </div>
+      <!--标题说明 end-->
+      <!-- <div class="panel-body" style=" padding-left: 0; padding-right: 0; "> -->
+      <div class="row">
+        <div class="col-md-4" *ngFor="let infor of infors">
+          <!--推荐信息模板 start-->
+          <a href="#">
+            <div class="panel  panel-d">
+              <div class="panel-body panel-body-d">
+                <span class="label label-warning">98%匹配</span>
+                <span class="label label-danger">热搜</span>
+                <div class="clearfix body-top">
+                  <p class="pull-left position ">{{infor?.compPosition}}</p>
+                  <span class="salary">{{infor?.compSalary}}</span>
+                </div>
+                <p class="company">{{infor?.compName}}</p>
+                <div class="clearfix">
+                  <p class="pull-left place ">{{infor?.compPlace}}</p>
+                  <span class="time">{{infor?.compPublish}}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!--/推荐信息模板 start-->
+        </div>
+      </div>
+
+      <!-- </div> -->
+    </div>
+    <!-- /搜索结果 -->
+  </div>
+</div>

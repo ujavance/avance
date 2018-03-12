@@ -1,0 +1,20 @@
+
+.person {
+  font-size: 16px;
+}
+.person em,
+.person strong {
+  padding-right: 15px;
+}
+/*基本表单的颜色*/
+.panel-define>.panel-heading {
+  color: #fff;
+  background-color: #3f7985;
+  border-color: #4a8490;
+}
+/*搜索框中的颜色变化*/
+.work-experience li.list-group-item.panel-heading-noColor.active{
+  color: #fff;
+  background-color: #3f7985;
+  border-color: #4a8490;
+}

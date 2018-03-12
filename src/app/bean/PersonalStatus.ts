@@ -1,0 +1,1 @@
+export enum PersonalStatus { LOGIN, NOTLOGIN, SUBMITTED };

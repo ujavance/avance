@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <!--二级导航 start-->
+    <div class="col-lg-7 col-md-7 col-lg-offset-1">
+      <ul class="nav nav-tabs">
+        <li>
+          <a routerLink="/personOK/personal-information" routerLinkActive="active" >基本信息</a>
+        </li>
+        <li>
+          <a routerLink="/personOK/browsing-history" routerLinkActive="active" > 浏览记录 <span class="badge">12</span></a>
+        </li>
+        <li>
+          <a routerLink="/personOK/matching-records" routerLinkActive="active" >推荐匹配记录</a>
+        </li>
+        <li>
+          <a routerLink="/personOK/collection" routerLinkActive="active" >收藏夹 <span class="badge">8</span></a>
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+
+    <!--猜你喜欢 - 内容开始-->
+    <div class="col-lg-3 col-md-3">
+      <app-personalized-recommendation></app-personalized-recommendation>
+    </div>
+    <!--猜你喜欢 - 内容开始-->
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- 轮播开始 -->
+<div class="carousel slide" id="carousel-99981">
+
+  <ol class="carousel-indicators">
+    <li *ngFor="let carouselinfor of carouselinfors; let i = index;" [class.active]="i==0"
+        data-target="#carousel-99981">
+    </li>
+  </ol>
+
+  <div class="carousel-inner">
+    <!-- 轮播切换的一帧 -->
+    <div class="item" *ngFor="let carouselinfor of carouselinfors; let i = index;" [class.active]="i==0">
+      <a [href] ="carouselinfor?.content_url">
+        <img [alt]="carouselinfor?.photo_url" [src]="carouselinfor?.photo_url"/>
+      </a>
+      <!-- <div class="carousel-caption">
+        <h4>{{carouselinfor?.title}}</h4>
+        <p>{{carouselinfor?.descr}}</p>
+      </div> -->
+    </div>
+    <!-- /轮播切换的一帧 -->
+  </div>
+  <a class="left carousel-control" href="#carousel-99981" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-99981" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+<!-- /轮播开始 -->
+

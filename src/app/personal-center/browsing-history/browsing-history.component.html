@@ -1,0 +1,25 @@
+<div class="clearfix">
+  <!--标题说明 start-->
+  <div class="page-header">
+    <h3>
+      {{title}}
+      <small>{{subTitle}}</small>
+    </h3>
+  </div>
+  <!--标题说明 end-->
+  <!--推荐信息模板 start-->
+  <div *ngFor="let infor of infors" class="panel panel-warning">
+    <div class="panel-body">
+      <div class="clearfix">
+        <p class="pull-left position ">{{infor.compPosition}}</p>
+        <span class="salary">{{infor.compSalary}}</span>
+      </div>
+      <p class="company">{{infor.compName}}</p>
+      <div class="clearfix">
+        <p class="pull-left place ">{{infor.compPlace}}</p>
+        <span class="time">{{infor.compPublish}}</span>
+      </div>
+    </div>
+  </div>
+  <!--推荐信息模板 end-->
+</div>

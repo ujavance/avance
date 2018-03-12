@@ -1,0 +1,36 @@
+<div class="clearfix">
+  <!--标题说明 start-->
+  <div class="page-header">
+    <h1>
+      <i class="fa fa-spin fa-connectdevelop fa-rotate-10"></i>
+      {{title}}
+      <small>{{subTitle}}</small>
+    </h1>
+  </div>
+  <!--标题说明 end-->
+<div class="row">
+  <div class="col-md-3" *ngFor="let infor of infors">
+<!--推荐信息模板 start-->
+<a href="#">
+  <div class="panel panel-d">
+    <div class="panel-body panel-body-d">
+      <span class="label label-warning">98%匹配</span>
+      <span class="label label-danger">热搜</span>
+      <div class="clearfix body-top">
+        <p class="pull-left position ">{{infor?.compPosition}}</p>
+        <span class="salary">{{infor?.compSalary}}</span>
+      </div>
+      <p class="company">{{infor?.compName}}</p>
+      <div class="clearfix">
+        <p class="pull-left place ">{{infor?.compPlace}}</p>
+        <span class="time">{{infor?.compPublish}}</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!--推荐信息模板 end-->
+    </div>
+    </div>
+  
+</div>

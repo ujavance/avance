@@ -1,0 +1,27 @@
+<div class="panel recommond">
+
+  <div class="panel-heading">
+    <h4 class="text-info">猜你喜欢</h4>
+    <div class="line"></div>
+  </div>
+
+  <div class="panel-body" *ngFor="let infor of infors;">
+    <div class="media">
+      <a class="media-left" href="#">
+        <img class="media-object img-circle" src="http://placehold.it/70x70" alt="媒体对象">
+      </a>
+      <div class="media-body">
+        <p class="r-compPosition">
+          {{infor?.compPosition}}
+        </p>
+        <p class="r-salary">
+         {{infor?.compSalary}}
+        </p>
+        <p class="text-muted r-compName pull-left">
+          {{infor?.compName}}
+        </p>
+        <span class="r-compPlace text-muted">{{infor?.compPlace}}</span>
+      </div>
+    </div>
+  </div>
+</div>

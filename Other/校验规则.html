@@ -1,0 +1,81 @@
+邮箱校验规则：{
+    输入的数据必须包含 @ 符号和点号(.) 
+    同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号
+}
+
+    function submitForm() {
+        var form = new mini.Form("#form1");
+
+        form.validate();
+        if (form.isValid() == false) return;
+
+        //提交数据
+        var data = form.getData();
+        var json = mini.encode(data);
+        $.ajax({
+            url: "../data/FormService.aspx?method=SaveData",
+            type: "post",
+            data: { submitData: json },
+            success: function (text) {
+                alert("提交成功，返回结果:" + text);
+            }
+        });
+    }
+    ////////////////////////////////////////
+    function onEnglishValidation(e) {
+        if (e.isValid) {
+            if (isEnglish(e.value) == false) {
+                e.errorText = "必须输入英文";
+                e.isValid = false;
+            }
+        }
+    }
+    function onEnglishAndNumberValidation(e) {
+        if (e.isValid) {
+            if (isEnglishAndNumber(e.value) == false) {
+                e.errorText = "必须输入英文+数字";
+                e.isValid = false;
+            }
+        }
+    }
+    function onChineseValidation(e) {
+        if (e.isValid) {
+            if (isChinese(e.value) == false) {
+                e.errorText = "必须输入中文";
+                e.isValid = false;
+            }
+        }
+    }
+    function onIDCardsValidation(e) {
+        if (e.isValid) {
+            var pattern = /\d*/;
+            if (e.value.length < 15 || e.value.length > 18 || pattern.test(e.value) == false) {
+                e.errorText = "必须输入15~18位数字";
+                e.isValid = false;
+            }
+        }
+    }
+
+    ////////////////////////////////////
+    /* 是否英文 */
+    function isEnglish(v) {
+        var re = new RegExp("^[a-zA-Z\_]+$");
+        if (re.test(v)) return true;
+        return false;
+    }
+
+    /* 是否英文+数字 */
+    function isEnglishAndNumber(v) {
+
+        var re = new RegExp("^[0-9a-zA-Z\_]+$");
+        if (re.test(v)) return true;
+        return false;
+    }
+
+    /* 是否汉字 */
+    function isChinese(v) {
+        var re = new RegExp("^[\u4e00-\u9fa5]+$");
+        if (re.test(v)) return true;
+        return false;
+    }
+ 

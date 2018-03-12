@@ -1,0 +1,64 @@
+  <div class="modal-header" [ngClass]="headStyle" >
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- 表单form -->
+    <form class="form-horizontal" novalidate [formGroup]="formModel" (submit)="onSubmit()">
+        <!-- 用户名 -->
+        <div class="form-group has-feedback" [ngClass]="{ 'has-success': formModel.get('username').valid && formModel.get('username').touched,
+              'has-error': formModel.get('username').invalid && formModel.get('username').touched
+              }">
+          <label for="inputEmail3" class="col-sm-4 control-label">用户名</label>
+          <div class="col-sm-6">
+            <input formControlName="username" type="email" class="form-control" id="inputEmail3" placeholder="username">
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" [class.hidden]="!formModel.hasError('username')"></span>
+            <span class="glyphicon form-control-feedback" aria-hidden="true" [ngClass]="{ 'glyphicon-ok': formModel.get('username').valid && formModel.get('username').touched, 'glyphicon-remove':
+                                                formModel.get('username').invalid && formModel.get('username').touched }"></span>
+            <!-- <div class="help-block" [class.hidden]="!formModel.hasError('username','username')">
+                    {{formModel.getError('username','username')?.errorInfor}}
+                  </div> -->
+            <!-- <div class="help-block" [hidden]="formModel.get('username').valid && formModel.get('username').untouched"> -->
+               <!-- [hidden]="!formModel.hasError('username','username') || !formModel.hasError('minlength','username')" -->
+            <div class="help-block">
+              <p [class.hidden]="!(formModel.hasError('required',['username']) && formModel.get('username').touched)">用户名为必填选项</p>
+              <p [class.hidden]="!formModel.hasError('minlength',['username'])">用户名长度过短</p>
+              <p [class.hidden]="!formModel.hasError('maxlength',['username'])">用户名长度太长</p>
+              <p [class.hidden]="!formModel.hasError('username',['username'])">用户名格式错误</p>
+            </div>
+          </div>
+        </div>
+        <!-- /用户名 -->
+    
+        <!-- 密码 -->
+        <div class="form-group has-feedback" [ngClass]="{ 'has-success': formModel.get('password').valid && formModel.get('password').touched,
+                'has-error': formModel.get('password').invalid && formModel.get('password').touched
+                }">
+          <label for="inputPassword3" class="col-sm-4 control-label">密码</label>
+          <div class="col-sm-6">
+            <input formControlName="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            <span class="glyphicon form-control-feedback" aria-hidden="true" [ngClass]="{ 'glyphicon-ok': formModel.get('password').valid && formModel.get('password').touched, 'glyphicon-remove':
+                                  this.formModel.get('password').invalid && formModel.get('password').touched }"></span>
+            <div class="help-block">              
+              <p [class.hidden]="!formModel.hasError('minlength', ['password'])">请输入至少6个字</p>
+            </div>
+          </div>
+        </div>
+        <!-- /密码 -->
+    
+        <!-- 登录 -->
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-6">
+            <button type="submit" [ngClass]=" {'btn-danger': !formModel.valid, 'btn-success': formModel.valid}"  class="btn btn-danger" [disabled]="!formModel.valid" *ngIf="btnOK != 'null'" >{{btnOK}}</button>           
+          </div>
+        </div>
+        <!-- /登录 -->
+    </form>
+    <!-- /表单form -->
+  </div>
+<!--   <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="confirm()" *ngIf="btnOK != 'null'" >{{btnOK}}</button>
+    <button type="button" class="btn btn-success" (click)="decline()" *ngIf="btnNO != 'null'">{{btnNO}}</button>
+  </div> -->

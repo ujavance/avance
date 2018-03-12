@@ -1,0 +1,85 @@
+<nav class="navbar navbar-lighter">
+  <!-- container-fluid navbar-fixed-top -->
+  <div class="container">
+    <!-- 折叠按钮  -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">
+        SOTS
+      </a> -->
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/nav-img.png" class="img-responsive" alt="sots">
+      </a>
+    </div>
+    <!--/折叠按钮-->
+    <!-- 导航栏 -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/home"  href="#">
+            <span class="glyphicon glyphicon-home"></span> 首页
+          </a>
+        </li>
+        <!-- <li routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}" >
+          <a routerLink="/search" href="#">
+            <span class="glyphicon glyphicon-search"></span> 搜索页面
+          </a>
+        </li> -->
+        <li routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/charts" href="#">
+            <i class="fa fa-pie-chart"></i> 图表
+          </a>
+        </li>
+        <li routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/searchhome" href="#">
+            <i class="fa fa-pie-search"></i> 搜素首页
+          </a>
+        </li>
+      </ul>
+      <!-- 导航栏 右侧 -->
+      <ul class="nav navbar-nav navbar-right">
+       <!--  <li>
+          <a (click)='openModalRegister()'>
+            <i class="fa fa-user-plus"></i> 测试注册框
+          </a>
+        </li>
+        <li>
+          <a (click)='openModalSignIn()'>
+            <i class="fa fa-user-plus"></i> 测试登录框
+          </a>
+        </li> -->
+        <!-- <li>
+          <a (click)='openModalWithComponent()'>
+            <i class="fa fa-user-plus"></i> 测试弹出框
+          </a>
+        </li> -->
+        <li *ngIf="!isLoginOrRegister"  (click)='openModalRegister()'>
+          <a><i class="fa fa-user-plus"></i> 注册</a>
+        </li>
+        <li *ngIf="!isLoginOrRegister" (click)='openModalSignIn()'>
+          <a><i class="fa fa-user-circle"></i> 登录</a>
+        </li>
+        <!-- <li *ngIf="!isLoginOrRegister" routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/register" href="#"><i class="fa fa-user-plus"></i> 注册</a>
+        </li>
+        <li *ngIf="!isLoginOrRegister" routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/login" href="#"><i class="fa fa-user-circle"></i> 登录</a>
+        </li> -->
+        <li  (click)='clickSignOut()' *ngIf="isLoginOrRegister" routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a><i class="fa fa-sign-out"></i> 退出登录</a>
+        </li>
+        <li *ngIf="isLoginOrRegister" routerLinkActive="navActive" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/person" href="#">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 个人中心
+          </a>
+        </li>
+      </ul>
+      <!-- /导航栏 右侧-->
+    </div><!-- /导航栏 -->
+  </div><!-- /.container-fluid -->
+</nav>

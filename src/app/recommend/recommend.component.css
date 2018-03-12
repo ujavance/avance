@@ -1,0 +1,44 @@
+.salary {
+  color: #fd6445;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  font-style: italic;
+}
+
+.company {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0px;
+}
+
+.position {
+  font-size: 16px;
+  color: #999;
+}
+
+.place {
+  font-style: italic;
+  color: #999;
+}
+.carousel img {
+  width: 100%;
+}
+span.time {
+  font-style: normal;
+  color: #222;
+  padding-left: 15px;
+}
+small {
+  padding: 8px;
+}
+/* .panel-d {
+  border: none;
+}*/
+.panel-body-d {
+  border: 1px solid rgba(3, 151, 225, 0.5);
+}
+.col-md-3:hover .panel-body {
+    background: rgba(3, 151, 225, 0.5);
+}

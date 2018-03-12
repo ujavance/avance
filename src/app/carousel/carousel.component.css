@@ -1,0 +1,17 @@
+.carousel-inner {
+    border-radius: 15px;
+}
+.carousel {
+    /* background-color: #93999f; */
+    border-radius: 15px;
+    box-shadow: 0 12px 24px 0 rgba(7,17,27,.2);
+}
+.carousel-control.right {
+    border-radius: 15px;
+}
+.carousel-control.left {
+    border-radius: 15px;
+}
+.page-header {
+    border-bottom: none;
+}

@@ -1,0 +1,50 @@
+/*猜你喜欢*/
+.recommond .media-body p {
+  margin: 0;
+  font-size: 16px;
+}
+.r-salary {
+  color: #e5775c;
+}
+.r-compName {
+
+}
+p.r-compPosition {
+  color: #999;
+}
+
+span.r-compPlace {
+  padding-left: 5px;
+  font-style: italic;
+}
+.panel.recommond {
+  border: none;
+  background: none;
+}
+
+.recommond .panel-heading {
+  position: relative;
+}
+.line {
+  border-top: 1px solid #ccc;
+  position: absolute;
+  top: 50%;
+  width: 65%;
+  right: 0;
+}
+.recommond .panel-body {
+  border-top: none;
+  border-bottom: 1px solid #eee;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 10px;
+}
+.recommond .panel-heading {
+  background: none;
+}
+.position-relative {
+  position: relative;
+}
+.panel-title span.glyphicon {
+  padding: 0 8px;
+}

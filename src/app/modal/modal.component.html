@@ -1,0 +1,18 @@
+<div class="modal-header" [ngClass]="headStyle">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
+  </button>
+</div>
+<div class="modal-body">
+  <h3 class="text-center" *ngIf="message!=null" >
+    {{message}}
+  </h3>
+  <h2  class="text-center" *ngIf="waiting" >
+    <i class="fa fa-spinner fa-spin"></i>
+  </h2>
+</div>
+<!-- <div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="confirm()" *ngIf="btnOK != 'null'">{{btnOK}}</button>
+  <button type="button" class="btn btn-success" (click)="decline()" *ngIf="btnNo != 'null'">{{btnNO}}</button>
+</div> -->

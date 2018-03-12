@@ -1,0 +1,102 @@
+退出登录：{
+    点击退出登录 -> 弹框 -> {
+        Yes ： 清空记载数据， 跳至首页
+        No ： 继续留在当前页面
+    }
+    确认退出提示框
+}
+弹出登录框：{
+    按钮禁用：（表单字段 valid 为TRUE才可以点击），
+    登录结果： {
+        结果：{
+            关闭弹框，出现等待动画
+            登录成功：弹出成功动画，弹出失败动画
+            登录失败：
+        }
+    }
+}
+清理登录和注册{
+    路径声明：删除
+    链接删除：
+    删除模块是否快捷键
+}
+http {
+    修改： 轮播页面，改成两个字段，一个外部链接和图片地址链接，增加两个链接地址
+    content_url: string
+        photo_url: string
+}
+<!-- TODO jjjj -->
+search {
+    判断错误时候，将弹出错误提示,
+    表单验证，最长和最短，是否必填选项，
+    首先隐藏 搜索结果，等到返回接收成功，显示控件
+}
+登录弹出框 ： {
+    自定义 ： 
+}
+navbar logo{
+    高度是： 50px，在50px的高度上，文字是
+    上下有10像素的边距
+    去navBar-heading的padding
+}
+python {
+    《python核心编程第2版》
+}
+颜色 {
+    // TODO:
+     #f0f2f5
+}
+首页调整{
+    背景颜色：
+    navbar颜色：
+    卡片样式：
+    1 10 1
+    hot-job and recommond
+}
+ {
+    SearchPage学历， 经验
+    home 点击进入统计点击量， 返回字段
+    personalEdit 专业下拉选择（api 计算机相关专业， 数学相关专业， 其他）
+}
+图表展示{
+   距离底部有一个默认的高度，每一页都有这个高度。高度一hr 为基准
+   使用panel-body的样式{
+       border-radius, box-shadow, 
+   }
+   增加title 和subTitle 
+   第一页面增加说明
+}
+图标{
+    <!-- 标题 -->
+    title: {
+        text: '未来一周气温变化',
+        subtext: '纯属虚构',
+        x:'center'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    <!-- 指示条 位置 -->
+    legend: {
+        data:['最高气温','最低气温'],
+         x : 'left',
+    },
+    <!-- 工具条 -->
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+}
+参考Echarts 设计{
+    MaxLine and Bar： 两个y轴，折线和条形图结合
+    Dynamic Data：动态增加数据显示
+    
+}

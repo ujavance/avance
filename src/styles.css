@@ -1,0 +1,255 @@
+/* @charset 'UTF-8';
+@import 'assets/css/bootstrap.min.css'; */
+
+/* 
+  配色
+ */
+html {
+    overflow-x: hidden;
+}
+body{
+  font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+  margin-left: -15px;
+  margin-right: -15px;
+  /* background-color: rgba(238, 238, 238, .1); */
+  background-color: #f0f2f5;
+  position: relative;
+}
+a:hover {
+    text-decoration: none;
+}
+/*中间内容部分 最小高度超出屏幕的长度*/
+#main-Body {
+  /* padding-top: 20px; */
+  min-height: 510px;
+}
+/*搜索框中的颜色变化*/
+a.list-group-item:focus, 
+a.list-group-item:hover, 
+button.list-group-item:focus, 
+button.list-group-item:hover {
+  color: #555;
+  text-decoration: none;
+  background-color: #f8f7fb;
+}
+nav.navbar {
+    /* margin-bottom: 0; */
+    /* 消除navBar 和 主题内容的距离 */
+}
+nav.navbar.navbar-lighter {
+    background: #fff;
+    border-bottom: 1px solid #efefef;
+}
+/* 鼠标 小手 navBar li */
+nav li {
+    cursor: pointer;
+}
+/* 导航栏中文字 */
+.nav li a {
+    color: #999;
+    /* font-size: 18px; */
+}
+.nav li a:hover, .navActive li a {
+    color: #333;
+    background: none;
+}
+
+.carousel-container{
+  margin-bottom: 20px;
+}
+/* 轮播 指示点 */
+.carousel-indicators .active, 
+.carousel-indicators li{
+  margin-right: 10px;
+}
+/* hot-job 和 recommon的公共样式 */
+.panel-body-d {
+    border-radius: 4px;
+    -webkit-box-shadow: -2px 4px 2px rgba(0, 0, 0, .05);
+    box-shadow: -2px 4px 2px rgba(0, 0, 0, .05);
+}
+/* 热搜榜 */
+/* 数字序号 */
+li.list-group-item .text-danger{
+    font-weight: bolder;
+    font-style: italic;
+    padding-right: 5px;
+}
+li.list-group-item .bg-danger{
+    background-color: #d9534f
+}
+li.list-group-item .bg-warning{
+    background-color: #f7ec7d;
+}
+footer {
+    background: #383838;
+    color: #888888;
+    padding: 35px 0;
+    line-height: 30px;
+}
+.half {
+  width: 30%;
+  height: 2px;
+  background-color: #fff;
+}
+.division { 
+  text-align: center;
+  width: 100%;
+}
+/* 首页图标 */
+i.fa.fa-line-chart {
+    color: #f38693;
+}
+i.fa.fa-connectdevelop {
+    color: #0397e1;
+}
+
+/* 搜索匹配信息 start*/
+.salary {
+  color: #fd6445;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  font-style: italic;
+}
+
+.company {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0px;
+}
+
+.position {
+  font-size: 16px;
+  color: #999;
+}
+
+.place {
+  font-style: italic;
+  color: #999;
+}
+.carousel img {
+  width: 100%;
+}
+span.time {
+  font-style: normal;
+  color: #222;
+  padding-left: 15px;
+}
+small {
+  padding: 8px;
+}
+/* 搜索匹配 结果信息 */
+form .input-group-addon {
+    /* padding: 6px 12px; */
+    padding: 0px 5px;
+    width: 120px;
+}
+
+
+.searchPage .panel.panel-d {
+    border: 1px solid #eee;
+}
+/*搜索页面 单选框字体 */
+.searchPage form span.label {
+    font-size: 14px;
+    cursor: pointer;
+    /* 标签字体大小 */
+}
+span.label.label-lighter {
+    margin-right: 5px;
+    width: 100px;
+    color: #999;
+}
+.searchPage span.label.label-lighter-c {
+    background-color: #5cb85c;
+    color: #fff;
+}
+/* 去除规定内边距 */
+.searchPage label.checkbox-inline {
+    padding-left: 0;
+    font-weight: 700;
+    /* 设置和顶部技能的字体厚度一样 */
+}
+.searchPage .input-group {
+    width: 175px;
+}
+/* /搜索匹配 结果信息 */
+
+/* 推荐信息 覆盖样式 */
+.panel {
+  /* 去除默认边框， 改成内部边框，去掉默认颜色 */
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+/* 图表展示页面，每一个图表的样式 */
+.panel-chart{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+/* .panel.panel-warning.col-md-4:hover .panel-body {
+    background: #faebcc;
+} */
+/* a:hover .panel.panel-warning.col-md-4 {
+    background-color: #faebcc;
+} */
+/* 去除边框， 给body加边框 */
+/* .panel-d {
+  border: none;
+}
+.panel-body-d {
+  border-radius: 4px;
+  border: 1px solid #faebcc;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+} */
+/* 搜索匹配信息  end*/
+.clearfix.body-top {
+    margin-top: 10px;
+}
+/* 放logo */
+.navbar-brand{
+    padding: 0;
+}
+/* 弹出框 警告 */
+.modal-content-warning {
+    border-color: #cecc67;
+    background-color: #f7ec7d;
+    color: #151212;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.modal-content-success {
+    font-weight: bolder;
+    background-color: #009688;
+    border-color: #00695C;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+/* 弹出框颜色 */
+.modal-header {
+    color: #fff;
+}
+/* 提示框 - 头部颜色 */
+.modal-header {
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+}
+.head-success {
+    background-color: #5cb85c;
+}
+.head-warning {
+    background-color: #f7ec7d;
+    color: #000;
+}
+.head-normal {
+    background-color: rgba(0,0,0,.6);
+}
+.head-danger {
+    background-color: #d9534f;
+}

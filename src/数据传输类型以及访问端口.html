@@ -1,0 +1,161 @@
+链接： 
+http://localhost:8000
+
+首页：/sots/index
+
+1 轮播数据：
+API:  /sots/carouselData    
+    类型： json数组 数组名carousels
+    对象：
+       目标地址， 轮播图片地址（总共 2 个字段）
+        content_url: string
+        photo_url: string
+智能推荐，最热职位
+2 推荐信息
+    API: /sots/recommendInformation
+    类型：json数组
+    对象：
+        id， 公司名称， 公司位置， 工资， 职位， 发布时间， 招聘来源（总共 7 个字段）
+        id: number,
+        compName: string,
+        compPlace: string,
+        compSalary: string,
+        compPosition: string,
+        compPublishTime: string,
+        recruitmentSources: string,
+3最热职业
+    API: /sots/hotJob
+    类型：json数组
+    对象：
+        id， 公司名称， 公司位置， 工资， 职位， 发布时间， 招聘来源（总共 7 个字段）
+        id: number,
+        compName: string,
+        compPlace: string,
+        compSalary: string,
+        compPosition: string,
+        compPublishTime: string,
+        recruitmentSources: string,
+
+2- 职位查询结果：
+    API: /sots/searchResult
+    类型：json数组
+    对象：
+        id， 公司名称， 公司位置， 工资， 职位， 发布时间， 招聘来源（总共 7 个字段）
+        id: number,
+        compName: string,
+        compPlace: string,
+        compSalary: string,
+        compPosition: string,
+        compPublishTime: string,
+        recruitmentSources: string,
+
+	修改为：
+		｛
+			status: string 供判断查询结果类型（yes：查询成功no：查询成功但无匹配结果， error：查询失败）
+			message: string搜索提示消息（跟status相匹配的消息，用于提示用户）
+			Result ：json[]
+				对象：
+       					 id， 公司名称， 公司位置， 工资， 职位， 发布时间， 招聘来源（总共 7 个字段）
+       					 id: number,
+        				compName: string,
+       					 compPlace: string,
+       					 compSalary: string,
+       					 compPosition: string,
+      					  compPublishTime: string,
+      					  recruitmentSources: string,
+		｝
+    返回数据：
+        按职位查询的结果集合
+    跳转：
+        当前页面
+
+3- 搜索关键字：
+    API: /sots/searchKeyword
+    数据对象：json对象
+    对象：
+        发布时间， 工作经验， 学历， 语言（技能）（总共 4 个字段）
+        releaseTime: string[],
+        workExperience: string[],
+        education: string[],
+        skills: string[]
+    返回数据：
+        按关键字查询的结果集合
+    跳转：
+        当前页面
+
+个人信息：
+1从后台获取API: /sots/getPersonalInformation
+    类型：json,
+    对象：
+        status： string
+           (status：可能存在的值 'LOGIN（注册未填写）', 'NOTLOGIN（未注册）', 'SUBMITTED（注册已填写）')
+        result：
+            居住城市， 学位， 邮箱， 性别， 毕业学校， 毕业时间， 最高学历, 专业， 真实姓名， 电话， 工作年限(总共 11 个字段)
+            settledCity : string,
+            degree : string,
+            email : string,
+            gender : string,
+            graduatedSchool : string,
+            graduationYear : string,
+            highestEducation :  string,
+            majors : string, 
+            name : string,
+            phone : string,
+            workingTime : string,
+	返回数据：
+		个人信息	
+	跳转：
+		个人中心的显示页面
+2 提交到后台API: /sots/postPersonalInformation
+    类型：json
+    对象：
+        居住城市， 学位， 邮箱， 性别， 毕业学校， 毕业时间， 最高学历, 专业， 用户名， 电话， 工作年限(总共 11 个字段)
+        settledCity : string,
+        degree : string,
+        email : string,
+        gender : string,
+        graduatedSchool : string,
+        graduationYear : string,
+        highestEducation :  string,
+        majors : string, 
+        name : string,
+        phone : string,
+        workingTime : string,
+	返回数据：
+		空
+	跳转：
+		个人中心的显示页面
+
+5- 登录 
+    API: /sots/logIn
+    类型：json
+    对象：
+         username : string,
+         password : string
+    返回数据：
+         isOK : string,
+	跳转：
+		首页
+6- 注册
+    API: /sots/registered
+    类型：json
+    对象：
+         username : string,
+         password : string
+    返回数据：
+         isOK： string，
+	跳转：
+		个人中心的个人信息填写页面
+
+9- 猜你喜欢
+    API: /sots/personRecommend
+    类型：json数组
+    对象：
+    id， 公司名称， 公司位置， 工资， 职位， 发布时间， 招聘来源（总共 7 个字段）
+        id: number,
+        compName: string,
+        compPlace: string,
+        compSalary: string,
+        compPosition: string,
+        compPublishTime: string,
+        recruitmentSources: string,

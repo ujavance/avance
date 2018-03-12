@@ -1,0 +1,194 @@
+<!-- <div class="row clearfix">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <p class="text-center">
+      <img src="../../assets/logo-noword.png" class="img-responsive" alt="sots" style=" display: inline-block; ">    
+      <span>热搜</span>
+    </p>
+  </div>
+</div> -->
+<div class="row clearfix">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-7">
+    <form [formGroup]="formModel" novalidate name="searchForm" role="form">
+      <div class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for=" ">职业搜索</label>
+          <div class="input-group">
+            <div class="input-group-addon">职业</div>
+            <input formControlName="position" type="text" class="form-control" id="" placeholder="请输入搜索职位">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for=" ">发布单位</label>
+          <div class="input-group">
+            <div class="input-group-addon">公司</div>
+            <input formControlName="comp" type="text" class="form-control" id="" placeholder="请输入发布单位">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for=" ">工作地点</label>
+          <div class="input-group">
+            <div class="input-group-addon">地点</div>
+            <input formControlName="place" type="text" class="form-control" id="" placeholder="请输入地点">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-group-addon" for="we11">学历</div>
+          <select class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="exper" id="we11" placeholder="工作经验" type="text"
+            ng-reflect-name="exper">
+            <!--bindings={}-->
+            <option>一年</option>
+            <option>一年</option>
+            <option>一年</option>
+            <option>一年</option>
+            <option>一年</option>
+          </select>
+        </div>
+        <button type="button" (click)="onSubmit()" class="btn btn-primary">搜索</button>
+      </div>
+      <hr>
+      <div>
+        <span class="label label-info">发布时间</span>
+        <span class="label label-lighter" (click)="clickBtn = 0" [class.label-lighter-c]="(clickBtn==0)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickBtn==0)"></span>
+            <input formControlName="time" [class.hidden]="true" type="checkbox" id=" " value="option1"> 最近三天
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickBtn = 1" [class.label-lighter-c]="(clickBtn==1)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickBtn==1)"></span>
+            <input [class.hidden]="true" type="checkbox" id=" " value="option1"> 最近五天
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickBtn = 2" [class.label-lighter-c]="(clickBtn==2)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickBtn==2)"></span>
+            <input [class.hidden]="true" type="checkbox" id=" " value="option1"> 最近一周
+          </label>
+        </span>
+      </div>
+      <hr>
+      <div>
+        <span class="label label-info">薪资水平</span>
+        <span class="label label-lighter" (click)="clickSalary = 0" [class.label-lighter-c]="(clickSalary==0)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSalary==0)"></span>
+            <input formControlName="salary" [class.hidden]="true" type="checkbox" id=" " value="option1"> 2K-3K
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickSalary = 1" [class.label-lighter-c]="(clickSalary==1)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSalary==1)"></span>
+            <input [class.hidden]="true" type="checkbox" id=" " value="option1"> 4K-5K
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickSalary = 2" [class.label-lighter-c]="(clickSalary==2)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSalary==2)"></span>
+            <input [class.hidden]="true" type="checkbox" id=" " value="option1"> 6K-8K
+          </label>
+        </span>
+      </div>
+      <hr>
+      <div>
+        <span class="label label-info">工作经验</span>
+        <span class="label label-lighter" (click)="clickExper = 0" [class.label-lighter-c]="(clickExper==0)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickExper==0)"></span>
+            <input formControlName="exper" [class.hidden]="true" type="checkbox" id=" " value="option1"> 1年
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickExper = 1" [class.label-lighter-c]="(clickExper==1)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickExper==1)"></span>
+            <input formControlName="exper" [class.hidden]="true" type="checkbox" id=" " value="option1"> 1-3年
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickExper = 2" [class.label-lighter-c]="(clickExper==2)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickExper==2)"></span>
+            <input formControlName="exper" [class.hidden]="true" type="checkbox" id=" " value="option1"> 3-5年
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickExper = 3" [class.label-lighter-c]="(clickExper==3)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickExper==3)"></span>
+            <input formControlName="exper" [class.hidden]="true" type="checkbox" id=" " value="option1"> 5年及以上
+          </label>
+        </span>
+      </div>
+      <hr>
+      <div formArrayName="skills">
+        <span class="label label-info">技能要求</span>
+        <span *ngFor="let skill of skills, let iSkill = index" [formGroupName]="iSkill"  class="label label-lighter" (click)="clickSkill = iSkill" [class.label-lighter-c]="(clickSkill==iSkill)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSkill==iSkill)"></span>
+            <input formControlName="skillInfor" [class.hidden]="true" type="checkbox" id=" " value="skill"> skill
+          </label>
+        </span>
+        
+        <!-- <span class="label label-lighter" (click)="clickSkill = 1" [class.label-lighter-c]="(clickSkill==1)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSkill==1)"></span>
+            <input formControlName="skillInfor" [class.hidden]="true" type="checkbox" id=" " value="option1"> Swiff
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickSkill = 2" [class.label-lighter-c]="(clickSkill==2)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSkill==2)"></span>
+            <input formControlName="skillInfor" [class.hidden]="true" type="checkbox" id=" " value="option1"> PHP
+          </label>
+        </span>
+        <span class="label label-lighter" (click)="clickSkill = 3" [class.label-lighter-c]="(clickSkill==3)">
+          <label class="checkbox-inline">
+            <span class="glyphicon glyphicon-ok" *ngIf="(clickSkill==3)"></span>
+            <input formControlName="skillInfor" [class.hidden]="true" type="checkbox" id=" " value="option1"> Django
+          </label>
+        </span> -->
+      </div>
+      <hr>
+    </form>
+    <!-- /表单 -->
+  </div>
+  <div class="col-md-2">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of collection,let i = index">
+        <span class="glyphicon glyphicon-fire" style="color: red" *ngIf="i<3"></span>
+        <span class="text-warning" *ngIf="i>=3 ">{{item?.index}}</span>
+        {{item?.content}}
+        <span class="badge bg-warning" *ngIf="item?.new">新</span>
+        <span class="badge bg-danger" *ngIf="item?.hot">热</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <div class="row clearfix">
+  <div class="col-md-2"></div>
+  <div class="col-md-8"> 
+
+  </div>
+  <div class="col-md-2"></div>
+</div> -->
+
+<!-- <div class="input-group input-group-lg">
+          <span class="input-group-addon">
+            <select style=" background: none; border: none; width: 100px; ">
+              <option value="职位">职位</option>
+              <option value="公司名称">公司名称</option>
+              <option value="发布时间">发布时间</option>
+              <option value="薪资">薪资</option>
+            </select>
+          </span>
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div> -->

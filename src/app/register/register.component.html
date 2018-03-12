@@ -1,0 +1,108 @@
+<div class="modal-header" [ngClass]="headStyle">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" novalidate [formGroup]="formModel" (submit)="onSubmit()">
+      <!-- 用户名 -->
+      <div class="form-group has-feedback" [ngClass]="{ 'has-success': formModel.get('username').valid && formModel.get('username').touched,
+          'has-error': formModel.get('username').invalid && formModel.get('username').touched
+          }">
+        <label for="ie3" class="col-sm-4 control-label">用户名</label>
+        <div class="col-sm-6">
+          <input user-async formControlName="username" type="email" class="form-control" id="ie3" placeholder="username">
+          <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" [class.hidden]="!formModel.hasError('minlength',['username'])"></span>
+          <span class="glyphicon form-control-feedback" aria-hidden="true" [ngClass]="{ 'glyphicon-ok': formModel.get('username').valid && formModel.get('username').touched, 'glyphicon-remove':
+                                            formModel.get('username').invalid && formModel.get('username').touched }"></span>
+          <!-- <div class="help-block" [class.hidden]="!formModel.hasError('username','username')">
+                {{formModel.getError('username','username')?.errorInfor}}
+              </div> -->
+          <div class="help-block" [hidden]="!formModel.hasError('username',['username']) || !formModel.hasError('minlength',['username'])">
+              <p [class.hidden]="!formModel.hasError('usernameLike',['username'])">{{formModel.getError('usernameLike',['username'])?.errorInfor}}</p>            
+            <p [hidden]="!(formModel.hasError('required',['username']) && formModel.get('username').touched)">用户名为必填选项</p>
+            <p [hidden]="!formModel.hasError('minlength',['username'])">用户名长度过短</p>
+            <p [hidden]="!formModel.hasError('maxlength',['username'])">用户名长度太长</p>
+            <p [hidden]="!formModel.hasError('username',['username'])">用户名格式错误</p>
+          </div>
+        </div>
+      </div>
+      <!-- /用户名 -->
+
+      <!--  两个密码 -->
+      <div formGroupName='passwords'>
+        <!-- 密码 -->
+        <div class="form-group has-feedback" [ngClass]="{ 'has-success': formModel.get('passwords').get('password').valid && formModel.get('passwords').get('password').touched,
+            'has-error': (formModel.get('passwords').get('password').invalid && formModel.get('passwords').get('password').touched)}">
+          <label for="ip3" class="col-sm-4 control-label">密码</label>
+          <div class="col-sm-6">
+            <input formControlName="password" type="password" class="form-control" id="ip3" placeholder="Password">
+            <span class="glyphicon form-control-feedback" aria-hidden="true" [ngClass]="{ 'glyphicon-ok': formModel.get('passwords').get('password').valid && formModel.get('passwords').get('password').touched,
+                'glyphicon-remove': formModel.get('passwords').get('password').invalid && formModel.get('passwords').get('password').touched
+                }"></span>
+            <!-- <div class="help-block" [class.hidden]="!formModel.hasError('minlength', ['passwords', 'password']) || !formModel.hasError('required', ['passwords', 'password'])"> -->
+            <div class="help-block">
+              <p [class.hidden]="!(formModel.hasError('required', ['passwords', 'password']) && formModel.get('passwords').get('password').touched)">
+                密码为必填选项
+              </p>
+              <p [class.hidden]="!formModel.hasError('minlength', ['passwords', 'password'])">
+                密码长度过短
+              </p>
+              <p [class.hidden]="!formModel.hasError('maxlength', ['passwords', 'password'])">
+                密码长度过长
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /密码 -->
+        <!-- 确认密码 -->
+        <div class="form-group has-feedback" [ngClass]="{ 'has-success': formModel.get('passwords').get('confirmPassword').valid && formModel.get('passwords').get('confirmPassword').touched, 'has-error':
+          (formModel.get('passwords').get('confirmPassword').invalid && formModel.get('passwords').get('confirmPassword').touched)}">
+          <label for="ip4" class="col-sm-4 control-label">确认密码</label>
+          <div class="col-sm-6">
+            <input formControlName="confirmPassword" type="password" class="form-control" id="ip4" placeholder="确认密码">
+            <span class="glyphicon form-control-feedback" aria-hidden="true" [ngClass]="{ 'glyphicon-ok': formModel.get('passwords').get('confirmPassword').valid && formModel.get('passwords').get('confirmPassword').touched, 'glyphicon-remove':
+              formModel.get('passwords').get('confirmPassword').invalid && formModel.get('passwords').get('confirmPassword').touched }"></span>
+            <!-- <div class="help-block" [class.hidden]="!formModel.hasError('minlength',['passwords', 'confirmPassword'])">
+                  <p>请输入至少6个字</p>
+                  <p>请输入至少6个字</p>
+                </div> -->
+            <!-- <div class="help-block" [class.hidden]="!formModel.hasError('equal','passwords') && formModel.get('passwords').get('confirmPassword').touched"> -->
+            <div class="help-block">
+              <p>{{formModel.getError('equal',['passwords'])?.errorInfor}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- /确认密码 -->
+
+      </div>
+      <!--  /两个密码 -->
+      <!-- 
+          <div>
+             confirmPassword hasError {{formModel.hasError('minlength','confirmPassword')}}
+          </div>
+          <div>
+             password hasError{{formModel.hasError('minlength','password')}}
+          </div>
+          <div>
+            invalid {{formModel.get('passwords').get('confirmPassword').invalid}}
+          </div>
+          <div>
+            valid {{formModel.get('passwords').get('confirmPassword').valid}}
+          </div>
+          <div>
+            pristine {{formModel.get('passwords').get('confirmPassword').pristine}}
+          </div>
+          <div>
+            dirty {{formModel.get('passwords').get('confirmPassword').dirty}}
+          </div> -->
+      <!-- 登录 -->
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-6">
+          <button [ngClass]=" {'btn-danger': !formModel.valid, 'btn-success': formModel.valid}"  [disabled]="!formModel.valid" type="submit" class="btn btn-default">注册</button>
+        </div>
+      </div>
+      <!-- /登录 -->
+  </form>
+</div>

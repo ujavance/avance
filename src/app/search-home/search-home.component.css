@@ -1,0 +1,21 @@
+.panel-body-d {
+  border: 1px solid rgba(243, 134, 147, 0.9);
+}
+.col-md-3:hover .panel-body {
+    background-color: rgba(243, 134, 147, 0.9);
+}
+a.list-group-item.active {
+    padding: 10px 15px;
+    background: none;
+    color: #d9534f;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+a.list-group-item {
+    border-left: none;
+    border-right: none;
+    background: none;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+}
+/*中间内容部分 最小高度超出屏幕的长度*/
+#main-Body {
+  min-height: 600px;
+}
+/*搜索框中的颜色变化*/
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+  color: #555;
+  text-decoration: none;
+  background-color: #f8f7fb;
+}
+.container-fluid {
+  padding: 0;
+}
+.carousel-container{
+  margin-bottom: 20px;
+}
+footer {
+    background: #383838;
+    color: #888888;
+    padding: 35px 0;
+    line-height: 30px;
+}
+.half {
+  width: 30%;
+  height: 2px;
+  background-color: #fff;
+}
+.division { 
+  text-align: center;
+  width: 100%;
+}
+/* 首页图标 */
+i.fa.fa-line-chart {
+    color: #f38693;
+}
+i.fa.fa-connectdevelop {
+    color: #0397e1;
+}
+
+/* 搜索匹配信息 start*/
+.salary {
+  color: #fd6445;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  font-style: italic;
+}
+
+.company {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0px;
+}
+
+.position {
+  font-size: 16px;
+  color: #999;
+}
+
+.place {
+  font-style: italic;
+  color: #999;
+}
+.carousel img {
+  width: 100%;
+}
+span.time {
+  font-style: normal;
+  color: #222;
+  padding-left: 15px;
+}
+small {
+  padding: 8px;
+}
+.panel {
+  border: none;
+}
+.panel.panel-warning.col-md-4:hover .panel-body {
+    background: #f7ec7d;
+}
+
+/* 搜索匹配信息 end*/
+
+/* 弹出框 警告 */
+.modal-content-warning {
+    border-color: #cecc67;
+    background-color: #f7ec7d;
+    color: #151212;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.modal-content-success {
+    font-weight: bolder;
+    background-color: #009688;
+    border-color: #00695C;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+/* navbar 点击或覆盖 */
+/* nav li.active a{
+  color: #fff;
+}
+nav li {
+  color: rgba(255, 255, 255, 0.6);
+} */
+/* nav li.navActive, nav li:hover {
+    background-color: #8c8c8c;
+} */
+/* 弹出框颜色 */
+.modal-header {
+    color: #fff;
+}
+/* 提示框 - 头部颜色 */
+.modal-header {
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+}
+.head-success {
+    background-color: #009688;
+}
+.head-warning {
+    background-color: #f7ec7d;
+    color: #000;
+}
+.head-normal {
+    background-color: rgba(0,0,0,.6);
+}
+.head-danger {
+    background-color: #d9534f;
+}

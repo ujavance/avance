@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-4">
+      <!--登录表单 start-->
+      <form class="form-horizontal" novalidate [formGroup]="formModel" (submit)="onSubmit()">
+        <div id="personInfor">
+          <legend>个人信息 </legend>
+        </div>
+        <div class="form-group  has-feedback">
+          <label for="name" class="col-sm-3 control-label">姓名</label>
+          <div class="col-sm-9">
+            <input formControlName='name' id="name" class="form-control" type="text" placeholder="姓名">
+          </div>
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="gender" class="col-sm-3 control-label">性别</label>
+          <div class="col-sm-3">
+            <select formControlName='gender' id="gender" class="form-control" type="text">
+              <option *ngFor="let gender of sex" [value]="gender">{{gender}}</option>
+            </select>
+          </div>
+          <label for="city" class="col-sm-2 control-label">城市</label>
+          <div class="col-sm-4">
+            <select formControlName='settledCity' id="city" class="form-control" type="text">
+              <option *ngFor="let a of citys" [value]="a">
+                {{a}}
+              </option>
+
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="col-sm-3 control-label">电话</label>
+          <div class="col-sm-9">
+            <input formControlName='phone' id="phone" class="form-control" type="text" placeholder="电话">
+          </div>
+        </div>
+        <!--  最高学历  -->
+        <div class="form-group form-inline">
+          <label for="highestEducation" class="col-sm-3 control-label">学历</label>
+          <div class="col-sm-3">
+            <select id="highestEducation" formControlName='highestEducation' class="form-control">            
+              <option *ngFor="let heducation of edu" [value]="heducation">{{heducation}}</option>
+            </select>
+          </div>
+
+          <label for="yearOfService" class="col-sm-2 control-label">工作年限</label>
+          <div class="col-sm-4">
+            <select id="yearOfService" formControlName='workingTime' class="form-control">
+              <option *ngFor="let year of workTimes" [value]="year">{{year}}</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="mailbox" class="col-sm-3 control-label">邮箱</label>
+          <div class="col-sm-9">
+            <input id="mailbox" formControlName='email' class="form-control" type="email" placeholder="邮箱">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="majors" class="col-sm-3 control-label">专业</label>
+          <div class="col-sm-9">
+            <input id="majors" formControlName='majors' class="form-control" type="majors" placeholder="专业">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="graduatedSchool" class="col-sm-3 control-label">毕业学校</label>
+          <div class="col-sm-3">
+            <input id="graduatedSchool" formControlName='graduatedSchool' class="form-control" type="text" placeholder="毕业学校">
+          </div>
+          <label for="graduationYear" class="col-sm-2 control-label">毕业时间</label>
+          <div class="col-sm-4">
+            <input id="graduationYear" formControlName='graduationYear' class="form-control" type="date" placeholder="毕业时间" name="graduationYear">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="degree" class="col-sm-3 control-label">学位</label>
+          <div class="col-sm-9">
+            <input id="degree" formControlName='degree' class="form-control" type="text" placeholder="学位" name="degree">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <input [ngClass]=" {'btn-danger': !formModel.valid, 'btn-success': formModel.valid}" [disabled]="!formModel.valid" class="btn btn-default btn-login col-sm-offset-3" type="submit" value="提交">
+        </div>
+      </form>
+      <!--登录表单 start-->
+    </div>
+  </div>
+</div>

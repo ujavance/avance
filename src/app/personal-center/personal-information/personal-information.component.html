@@ -1,0 +1,88 @@
+<div>
+  <div class="panel panel-define">
+    <div class="panel-heading">
+      <div class="panel-title ">
+        <h3 class="text-left">
+          <span class="glyphicon glyphicon-chevron-right"></span>简介
+        </h3>
+      </div>
+    </div>
+    <div class="panel-body">
+      <img alt="140x140" src="http://placehold.it/100x100" class="img-circle center-block" />
+      <div class="person">
+        <h2 class="text-center">{{personInfor?.name}}</h2>
+        <p class="text-center jobdesc">
+          <em class="person editable">多年从事大数据开发，具有良好的数据概念和团队写作能力</em>
+        </p>
+        <!-- <p class="text-center">
+          <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+          <strong class="editable">{{personInfor?.}}</strong><span class="editable">腾讯科技深圳有限公司</span>
+        </p> -->
+        <p class="text-center">
+          <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+          <em  class="editable">{{ personInfor?.gender}}</em>
+          <strong class="editable">xxxx</strong>
+          <em class="editable">工作{{ personInfor?.workingTime}}</em>
+          <span class="editable">{{personInfor?.settledCity}}</span>
+        </p>
+        <p class="text-center">
+          <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+          <em class="editable">{{ personInfor?.phone}}</em>
+          <span class="glyphicon glyphicon-envelope"></span>
+          <em class="editable">{{ personInfor?.email}} </em>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 工作经历 -->
+  <ul class="list-group work-experience">
+    <li href="#" class="list-group-item panel-heading-noColor active">
+      <div class="list-group-item-heading">
+        <h3 class="text-left">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          工作经历
+        </h3>
+      </div>
+    </li>
+
+    <li href="#" class="list-group-item clearfix">
+      <h4 class="list-group-item-heading">xxx</h4>
+      <p class="list-group-item-text">xxxxxxxxx</p>
+      <span class="pull-right text-muted">
+								xxxxxxxxxxxxxxxx
+								</span>
+    </li>
+    <li href="#" class="list-group-item clearfix">
+      <h4 class="list-group-item-heading">xxxxxxxxx</h4>
+      <p class="list-group-item-text">xxxxxxxxxxxxxxx</p>
+      <span class="pull-right text-muted">
+									xx-xxxxxxxxx-xxx
+      </span>
+    </li>
+  </ul>
+
+  <div class="panel panel-heading-noColor panel-define">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h3 class="text-left">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          教育水平
+        </h3>
+      </div>
+    </div>
+    
+    <div class="panel-body">
+      <p class="lead">
+         {{ personInfor?.graduatedSchool}}
+      </p>
+      <p class="text-info">
+        <strong>{{ personInfor?.highestEducation}}</strong>
+         {{ personInfor?.majors}}
+      </p>
+      <p class="text-left">
+        <span class=" text-muted">{{ personInfor?.graduationYear}}</span>
+      </p>
+    </div>
+  </div>
+</div>

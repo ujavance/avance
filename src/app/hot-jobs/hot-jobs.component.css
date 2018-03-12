@@ -1,0 +1,8 @@
+/* 首页 hot-job */
+/* 正常和覆盖样式 */
+.panel-body-d {
+  border: 1px solid rgba(243, 134, 147, 0.9);
+}
+.col-md-3:hover .panel-body {
+    background-color: rgba(243, 134, 147, 0.9);
+}
