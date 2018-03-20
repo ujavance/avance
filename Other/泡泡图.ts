@@ -63,9 +63,7 @@ option = {
                             return a.data[3];
                         }
                     }
-
                 }
-
             },
             symbolSize: function (value) {
                 return Math.round(value[2] / 2);

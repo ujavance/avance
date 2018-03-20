@@ -87,7 +87,7 @@ export class NavbarComponent implements OnInit {
     const initialState = {
       title: 'SOTS',
       message: '测试使用',
-      headStyle: { 'head-success': true },
+      headStyle: { 'head-success': false },
       btnOK: '登录',
       btnNO: '退出'
     };
@@ -99,7 +99,7 @@ export class NavbarComponent implements OnInit {
     const initialState = {
       title: '注册',
       message: '测试使用',
-      headStyle: { 'head-success': true },
+      headStyle: { 'head-success': false },
       btnOK: '登录',
       btnNO: '退出'
     };

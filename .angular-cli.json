@@ -24,7 +24,11 @@
       "scripts": [
         "../node_modules/_jquery@3.3.1@jquery/dist/jquery.js",
         "../node_modules/_bootstrap@3.3.7@bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/echarts/dist/echarts.min.js"
+        "../node_modules/echarts/dist/echarts.min.js",
+        "../node_modules/echarts-gl/dist/echarts-gl.js",
+        "../node_modules/echarts/map/js/china.js",
+        "../node_modules/echarts/dist/extension/bmap.js",
+        "./assets/js/echarts-wordcloud.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -13,6 +13,10 @@
       <a [href] ="carouselinfor?.content_url">
         <img [alt]="carouselinfor?.photo_url" [src]="carouselinfor?.photo_url"/>
       </a>
+      <!-- 占位符的作用 -->
+      <a *ngIf="isshowcarousel" >
+        <img _ngcontent-c7="" alt="assets/800x300.png" src="assets/800x300.png">
+      </a>
       <!-- <div class="carousel-caption">
         <h4>{{carouselinfor?.title}}</h4>
         <p>{{carouselinfor?.descr}}</p>

@@ -6,6 +6,9 @@ import { ChartsRouting } from './ChartsRouting';
 import { UserChartsComponent } from './user-charts/user-charts.component';
 import { JobChartsComponent } from './job-charts/job-charts.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { MapChartComponent } from './map-chart/map-chart.component';
+import { WordCloudComponent } from './word-cloud/word-cloud.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { NgxEchartsModule } from 'ngx-echarts';
     ],
     declarations: [
         UserChartsComponent,
-        JobChartsComponent
+        JobChartsComponent,
+        MapChartComponent,
+        WordCloudComponent,
+        LineChartComponent
     ]
 })
 export class ChartsModule { }

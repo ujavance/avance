@@ -17,17 +17,19 @@ import { ModalService } from '../shared/modal-service';
 })
 export class SearchHomeComponent implements OnInit {
 
-  /* 判断当前选择Radio */
+  /* 判断当前选择 单选项 Radio */
   cSalary = -1;
   cSkill = -1;
   cTime = -1;
   cWork = -1;
-  /* 获取候单选选项 */
+  /* 等候单选选项 */
   skills: string[];
   salarys: string[];
   releseTime: string[];
   workTime: string[];
   edus: string[];
+  /* 猜你喜欢 */
+  recommend: Object[];
   /* 显示搜索结果 */
   searchResult = false;
   /* 查询返回结果 */
@@ -35,30 +37,17 @@ export class SearchHomeComponent implements OnInit {
 
   // TODO: 模拟排行榜
   // TODO: 返回数据接口
-  collection = [
-    {index: 1, content: "大数据分析师", new: true, hot: false},
-    { index: 2, content: "大数据算法工程师", new: false, hot: true},
-    { index: 3, content: "大数据分析与应用", new: true, hot: false},
-    { index: 4, content: "大数据设计", new: false, hot: false},
-    { index: 5, content: "算法工程师", new: true, hot: false}
-    // { index: 6, content: "数据分析", new: false, hot: false},
-    // { index: 7, content: "数据可视化", new: true, hot: false},
-    // { index: 8, content: "大数据分析师", new: false, hot: false},
-    // { index: 9, content: "数据挖掘", new: true, hot: false},
-    // { index: 10, content: "数据存储和管理", new: true, hot: false},
-  ];
-
-
+  
   formModel: FormGroup;
   /* error 弹出框 */
   bsModalRef: BsModalRef;
   /* 正在等待 弹出框 */
   bsMRNormal: BsModalRef;
-  /* 保存 多选的值 */
+  /* 可多选的技能 */
   sillsInfor: InforSkill[];
-  /* 控制按钮显示 */
-  toggleBut = false;
   selected: Array<string>=[];
+  /* 是否显示页面 */
+  isshow = false;
 
   constructor(
     private fb: FormBuilder,
@@ -69,23 +58,23 @@ export class SearchHomeComponent implements OnInit {
     /* 获得查询参数 */
     this.productService.getSearchParams().subscribe(
       data => {
-        /* 将结果显示在界面 */
+        /* 展示页面 */
+        this.isshow = true;
+        console.log('后台返回候选项');
+        console.log(data);
+        /* 候选字段 */
         this.edus = data.education;
         this.releseTime = data.releaseTime;
         this.skills = data.skills;
         this.workTime = data.workExperience;
-        this.salarys = data.salary;
-
-        /* 遍历技能创建表单模型 */
+        this.salarys = data.salary;        
+        /* 遍历技能值，创建技能对象 */
         this.sillsInfor = this.skills.map(str => {
           var obj: InforSkill = new InforSkill(str, false);
           return obj;
         });
-        // console.log('SkillsInfor 单选');
-        // console.log(this.sillsInfor);
-        /* 表单模型设置 */
-        // this.setSkills(this.sillsInfor);
-         
+        /* 获得猜你喜欢字段 */
+        this.recommend = data.recommend;
       });
 
     /* 表单模型结构 */
@@ -100,23 +89,12 @@ export class SearchHomeComponent implements OnInit {
       place: [null],   
       salary: [null],
       time: [null],
-      exper: [null],      
-      hots: [null]
+      exper: [null]
     });
   }
-/* , Validators.minLength(2)
-skills: this.fb.array([]),   edu: [null], */
    
-
   ngOnInit() {}
-  /* 语言技能  */
-  setSkills(iInforSkill: InforSkill[]) {
-    const skillsFGs = iInforSkill.map(tempt => this.fb.group(new Skills('')));
-    const skillFormArray = this.fb.array(skillsFGs);
-    this.formModel.setControl('skills', skillFormArray);
-    // this.formModel.value[] = null;
-    // this.formModel.setValue({"skills": null});
-  }
+  
   //   点击时执行
   //  执行增加、删除
   clickItem(item) {    
@@ -181,7 +159,7 @@ skills: this.fb.array([]),   edu: [null], */
       console.log('表单不合格 ： error');
     }
   }
-  /* 打开 waiting 的modal */
+  /* 打开 waiting 的 提示框 */
   openModalWithComponent() {
     /* 弹框提示 */
     const initialState = {
@@ -203,7 +181,7 @@ skills: this.fb.array([]),   edu: [null], */
         initialState: {
           title: '提示',
           message: '搜索出错',
-          headStyle: { 'head-danger': true },
+          headStyle: {'head-danger': true },
           waiting: false
         }
       });

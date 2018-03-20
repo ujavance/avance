@@ -9,14 +9,17 @@ import { CarouselInformation } from '../bean/CarouselInformation';
 })
 export class CarouselComponent implements OnInit {
   carouselinfors: CarouselInformation[];
-  constructor(private ps: ProductService) { 
+  /* 显示一张图片占位  */
+  isshowcarousel = true;
+  constructor(private ps: ProductService) {
     this.ps.getCarouselInformation().subscribe(date => {
       console.log(date);
+      /* 去除占位图片 */
+      this.isshowcarousel = false;
       this.carouselinfors = date;
     });
     console.log("轮播组件数据");
     console.log(this.carouselinfors);
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

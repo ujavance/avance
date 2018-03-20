@@ -159,3 +159,19 @@ API:  /sots/carouselData
         compPosition: string,
         compPublishTime: string,
         recruitmentSources: string,
+
+
+图表 API
+用户画像
+sots/analysis/user
+{
+// value 喜爱人数 name 城市名称
+    favcity：[{value:number, name:string}]
+    // value 喜爱人数 name 岗位名称
+    favjob：[{value:number, name:string}]
+    // value 人数 name 年龄段(20-25)
+    agestatus:[{value:number, name:string}]
+    // value 人数 name 学历(本科)
+    useredu:[{value:number, name:string}]
+}
+    

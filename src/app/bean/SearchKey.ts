@@ -5,7 +5,7 @@ export class SearchKey {
         public education: string[],
         public skills: string[],
         public salary: string[],
-
+        public recommend: Object[],
     ) { }
 }
 

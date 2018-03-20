@@ -1,0 +1,55 @@
+技术点：
+    restful api
+    mysql数据库
+    多线程
+    matplotlib绘图库
+    sklearn机器学习库
+    numpy科学计算
+    pickle序列化
+    pandas数据处理
+    jieba分词模块
+    django web框架
+    uwsgi服务器
+    nginx处理静态请求
+    github版本控制
+功能点：
+    restful api 与前端交互
+    数据存储
+    爬虫的扒取、分析与数据存储同时进行
+    matplotlib绘制统计图
+    sklearn回归模型预估薪资
+    numpy、pandas处理数据
+    pickle序列化
+    jieba中文分词及词频统计
+    django模型生成
+    分析每个职位的招聘要求，得出最受关注的技术排名
+    分析每条职位所属城市得出每个城市的职位数量、平均薪资等
+    对用户提交的数据进行拟合，得出用户的预测薪资及推荐职位
+    分析不同的关键字（如java，python），得出每个关键字对应的平均薪资、工作经验要求、学历要求等对应的职位能力需求图谱
+    分析每个公司的职位的分类等信息得出公司画像
+    分析用户的偏好得出用户画像
+    后台定时爬虫
+
+    
+---- ---- ---- ----
+
+技术点：
+    ngx-bootstrap UI组件
+    Echarts 图形可视化
+    异步校验表单
+    同步校验表单
+    Html + css + jquery
+    Angular
+    EasyUI
+    bootstrap
+    ngx-cookie
+功能点：
+    轮播图片
+    表单校验
+    数据图标
+    登录，注册
+    数据可视化图表
+// 0318
+ angular 访问图片路径错误(ng serve时可以正常使用这些图片，但是ng build后图片失效)
+ 
+

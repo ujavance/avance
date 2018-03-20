@@ -1,7 +1,17 @@
 <div class="col-md-10">
+  <!--标题说明 start-->
+  <div class="page-header">
+    <h1>
+      <!-- <i class="fa fa-line-chart"></i> -->
+      {{title}}
+      <small>{{subTitle}}</small>
+    </h1>
+  </div>
+  <!--标题说明 end-->
   <div class="panel panel-default panel-chart">
-    <div class="panel-body">
-      <div echarts [options]="option" class="demo-chart"></div>
+    
+    <div class="panel-body" style=" border: 15px solid #999; border-radius: 8px; ">
+      <div echarts [options]="option" class="demo-chart" (chartInit)="onChartInit($event)"></div>
     </div>
   </div>
 </div>

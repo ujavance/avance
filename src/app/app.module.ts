@@ -6,7 +6,6 @@ import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
@@ -55,7 +54,8 @@ import { ChartsComponent } from './charts/charts.component';
 import { UserChartsComponent } from './charts/user-charts/user-charts.component';
 import { JobChartsComponent } from './charts/job-charts/job-charts.component';
 import { ChartsModule } from './charts/ChartsModule';
-import { MapChartComponent } from './charts/map-chart/map-chart.component';
+import { WordCloudComponent } from './charts/word-cloud/word-cloud.component';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
 
 /* 
 移除模块 
@@ -88,8 +88,7 @@ import { MapChartComponent } from './charts/map-chart/map-chart.component';
     ModalComponent,
     SearchHomeComponent,
     UserAsyncDirective,
-    ChartsC,
-    MapChartComponentomponent
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
